@@ -4,9 +4,11 @@ import net.puh.springboot.mapper.WeaponMapper;
 import net.puh.springboot.model.Weapon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class WeaponDaoImpl implements WeaponDao {
 
   @Autowired private NamedParameterJdbcTemplate template;
