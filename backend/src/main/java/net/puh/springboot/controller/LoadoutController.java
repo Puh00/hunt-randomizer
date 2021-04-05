@@ -24,4 +24,15 @@ public class LoadoutController {
   public Loadout getRandomFullLoadout() {
     return loadoutService.getRandomFullLoadout();
   }
+
+  // For testing purposes, will use Pathvariables instead
+  @GetMapping("random-loadout-quart")
+  public Loadout getRandomQuartermasterLoadout() {
+    return loadoutService.getRandomQuarterMasterLoadout();
+  }
+
+  @GetMapping("random-loadout-full-quart")
+  public Loadout getRandomFullQuartermasterLoadout() {
+    return loadoutService.getRandomFullQuarterMasterLoadout();
+  }
 }

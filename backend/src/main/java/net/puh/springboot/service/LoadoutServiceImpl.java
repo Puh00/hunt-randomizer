@@ -54,4 +54,31 @@ public class LoadoutServiceImpl implements LoadoutService {
     return new Loadout(
         primary, secondary, itemDao.getRandomTools(), itemDao.getRandomConsumables());
   }
+
+  @Override
+  public Loadout getRandomQuarterMasterLoadout() {
+    Weapon primary = weaponDao.getRandomWeapon();
+    Weapon secondary;
+    switch (primary.getSize()) {
+      case 1:
+      case 2:
+        secondary = weaponDao.getRandomWeapon();
+        break;
+      case 3:
+        secondary = weaponDao.getTwoOrOneSlotWeapon();
+        break;
+      default:
+        secondary = null;
+    }
+    return new Loadout(
+        primary, secondary, itemDao.getRandomTools(), itemDao.getRandomConsumables());
+  }
+
+  @Override
+  public Loadout getRandomFullQuarterMasterLoadout() {
+    Weapon primary = weaponDao.getThreeSlotWeapon();
+    Weapon secondary = weaponDao.getTwoSlotWeapon();
+    return new Loadout(
+        primary, secondary, itemDao.getRandomTools(), itemDao.getRandomConsumables());
+  }
 }
