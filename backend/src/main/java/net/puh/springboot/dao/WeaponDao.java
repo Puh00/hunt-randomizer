@@ -8,33 +8,37 @@ public interface WeaponDao {
    *
    * @return a random weapon
    */
-  Weapon getRandomWeapon();
+  Weapon getRandomWeapon(int level);
 
   /**
    * Retrieves a random large weapon
    *
+   * @param level the specified level by the user
    * @return a random primary weapon
    */
-  Weapon getThreeSlotWeapon();
+  Weapon getThreeSlotWeapon(int level);
 
   /**
    * Retrieves a medium slot weapon
    *
+   * @param level the specified level by the user
    * @return a medium slot weapon
    */
-  Weapon getTwoSlotWeapon();
+  Weapon getTwoSlotWeapon(int level);
 
   /**
    * Retrieves a small slot weapon
    *
+   * @param level the specified level by the user
    * @return a small slot weapon
    */
-  Weapon getOneSlotWeapon();
+  Weapon getOneSlotWeapon(int level);
 
   /**
    * Retrieves a random weapon from the categories small or medium
    *
+   * @param level the specified level by the user
    * @return a random small or medium slot weapon
    */
-  Weapon getTwoOrOneSlotWeapon();
+  Weapon getTwoOrOneSlotWeapon(int level);
 }

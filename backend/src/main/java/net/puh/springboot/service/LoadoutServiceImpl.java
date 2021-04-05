@@ -14,71 +14,71 @@ public class LoadoutServiceImpl implements LoadoutService {
   @Resource private ItemDao itemDao;
 
   @Override
-  public Loadout getRandomLoadout() {
-    Weapon primary = weaponDao.getRandomWeapon();
+  public Loadout getRandomLoadout(int level) {
+    Weapon primary = weaponDao.getRandomWeapon(level);
     Weapon secondary;
     switch (primary.getSize()) {
       case 1:
-        secondary = weaponDao.getRandomWeapon();
+        secondary = weaponDao.getRandomWeapon(level);
         break;
       case 2:
-        secondary = weaponDao.getTwoOrOneSlotWeapon();
+        secondary = weaponDao.getTwoOrOneSlotWeapon(level);
         break;
       case 3:
-        secondary = weaponDao.getOneSlotWeapon();
+        secondary = weaponDao.getOneSlotWeapon(level);
         break;
       default:
         secondary = null;
     }
     return new Loadout(
-        primary, secondary, itemDao.getRandomTools(), itemDao.getRandomConsumables());
+        primary, secondary, itemDao.getRandomTools(level), itemDao.getRandomConsumables(level));
   }
 
   @Override
-  public Loadout getRandomFullLoadout() {
-    Weapon primary = weaponDao.getRandomWeapon();
+  public Loadout getRandomFullLoadout(int level) {
+    Weapon primary = weaponDao.getRandomWeapon(level);
     Weapon secondary;
     switch (primary.getSize()) {
       case 1:
-        secondary = weaponDao.getThreeSlotWeapon();
+        secondary = weaponDao.getThreeSlotWeapon(level);
         break;
       case 2:
-        secondary = weaponDao.getTwoSlotWeapon();
+        secondary = weaponDao.getTwoSlotWeapon(level);
         break;
       case 3:
-        secondary = weaponDao.getOneSlotWeapon();
+        secondary = weaponDao.getOneSlotWeapon(level);
         break;
       default:
         secondary = null;
     }
     return new Loadout(
-        primary, secondary, itemDao.getRandomTools(), itemDao.getRandomConsumables());
+        primary, secondary, itemDao.getRandomTools(level), itemDao.getRandomConsumables(level));
   }
 
   @Override
-  public Loadout getRandomQuarterMasterLoadout() {
-    Weapon primary = weaponDao.getRandomWeapon();
+  public Loadout getRandomQuarterMasterLoadout(int level) {
+    Weapon primary = weaponDao.getRandomWeapon(level);
     Weapon secondary;
     switch (primary.getSize()) {
       case 1:
       case 2:
-        secondary = weaponDao.getRandomWeapon();
+        secondary = weaponDao.getRandomWeapon(level);
         break;
       case 3:
-        secondary = weaponDao.getTwoOrOneSlotWeapon();
+        secondary = weaponDao.getTwoOrOneSlotWeapon(level);
         break;
       default:
         secondary = null;
     }
     return new Loadout(
-        primary, secondary, itemDao.getRandomTools(), itemDao.getRandomConsumables());
+        primary, secondary, itemDao.getRandomTools(level), itemDao.getRandomConsumables(level));
   }
 
   @Override
-  public Loadout getRandomFullQuarterMasterLoadout() {
-    Weapon primary = weaponDao.getThreeSlotWeapon();
-    Weapon secondary = weaponDao.getTwoSlotWeapon();
+  public Loadout getRandomFullQuarterMasterLoadout(int level) {
+    Weapon primary = weaponDao.getThreeSlotWeapon(level);
+    Weapon secondary = weaponDao.getTwoSlotWeapon(level);
     return new Loadout(
-        primary, secondary, itemDao.getRandomTools(), itemDao.getRandomConsumables());
+        primary, secondary, itemDao.getRandomTools(level), itemDao.getRandomConsumables(level));
   }
 }

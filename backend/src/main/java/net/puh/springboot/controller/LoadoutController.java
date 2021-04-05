@@ -12,13 +12,17 @@ public class LoadoutController {
 
   @Autowired LoadoutService loadoutService;
 
-  @GetMapping("random/{quart}/{full}")
-  public Loadout getRandomLoadout(@PathVariable boolean quart, @PathVariable boolean full) {
-    // check if the quartermaster trait is on, if a full loadout is required and act accordingly
+  @GetMapping("random/{quart}/{full}/{level}")
+  public Loadout getRandomLoadout(
+      @PathVariable boolean quart, @PathVariable boolean full, @PathVariable int level) {
+    // check if the quartermaster trait is on and if a full loadout is required
     if (quart)
       return full
-          ? loadoutService.getRandomFullQuarterMasterLoadout()
-          : loadoutService.getRandomQuarterMasterLoadout();
-    else return full ? loadoutService.getRandomFullLoadout() : loadoutService.getRandomLoadout();
+          ? loadoutService.getRandomFullQuarterMasterLoadout(level)
+          : loadoutService.getRandomQuarterMasterLoadout(level);
+    else
+      return full
+          ? loadoutService.getRandomFullLoadout(level)
+          : loadoutService.getRandomLoadout(level);
   }
 }
