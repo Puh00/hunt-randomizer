@@ -8,6 +8,18 @@ CREATE TABLE Weapons (
     unlock_level INTEGER NOT NULL
 );
 
+CREATE TABLE Tools (
+    name VARCHAR(100) PRIMARY KEY,
+    price INTEGER NOT NULL,
+    unlock_level INTEGER NOT NULL
+);
+
+CREATE TABLE Consumables (
+    name VARCHAR(100) PRIMARY KEY,
+    price INTEGER NOT NULL,
+    unlock_level INTEGER NOT NULL
+);
+
 CREATE VIEW RandomWeapon AS (
     SELECT * FROM Weapons
     ORDER BY RANDOM()
@@ -26,4 +38,16 @@ CREATE VIEW RandomSmallWeapon AS (
     WHERE size = 1
     ORDER BY RANDOM()
     LIMIT 1
+);
+
+CREATE VIEW FourRandomTools AS (
+    SELECT * FROM Tools
+    ORDER BY RANDOM()
+    LIMIT 4
+);
+
+CREATE VIEW FourRandomConsumables AS (
+    SELECT * FROM Consumables
+    ORDER BY RANDOM()
+    LIMIT 4
 );
