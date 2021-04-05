@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.http.ResponseEntity;
 
 import java.util.Random;
 
@@ -20,9 +19,6 @@ public class LoadoutControllerIntegrationTest {
 
   @Test
   public void getRandomLoadout() {
-    ResponseEntity<Loadout> response =
-        restTemplate.getForEntity("/v1/random/false/true/74", Loadout.class);
-
     // Check random loadout
     validateLoadouts(false, false, 4);
     // Check random full loadout
