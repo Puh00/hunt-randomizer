@@ -19,4 +19,9 @@ public class LoadoutController {
   public Loadout getRandomLoadout() {
     return loadoutService.getRandomLoadout();
   }
+
+  @GetMapping("random-loadout-full")
+  public Loadout getRandomFullLoadout() {
+    return loadoutService.getRandomFullLoadout();
+  }
 }

@@ -26,6 +26,13 @@ CREATE VIEW RandomWeapon AS (
     LIMIT 1
 );
 
+CREATE VIEW RandomLargeWeapon AS (
+    SELECT * FROM Weapons
+    WHERE size = 3
+    ORDER BY RANDOM()
+    LIMIT 1
+);
+
 CREATE VIEW RandomMediumWeapon AS (
     SELECT * FROM Weapons
     WHERE size = 2
@@ -36,6 +43,13 @@ CREATE VIEW RandomMediumWeapon AS (
 CREATE VIEW RandomSmallWeapon AS (
     SELECT * FROM Weapons
     WHERE size = 1
+    ORDER BY RANDOM()
+    LIMIT 1
+);
+
+CREATE VIEW RandomMediumSmallWeapon AS (
+    SELECT * FROM Weapons
+    WHERE size <= 2
     ORDER BY RANDOM()
     LIMIT 1
 );
