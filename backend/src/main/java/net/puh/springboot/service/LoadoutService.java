@@ -11,7 +11,7 @@ public interface LoadoutService {
   Loadout getRandomLoadout();
 
   /**
-   * The randomly generated loadout will use all of the slots := primary.size + secondary.size = 5
+   * The randomly generated loadout will use all of the slots := primary.size + secondary.size = 4
    *
    * @return a randomly generated loadout
    */
