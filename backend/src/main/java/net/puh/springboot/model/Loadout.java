@@ -5,14 +5,14 @@ import java.util.List;
 public class Loadout {
   private Weapon primary;
   private Weapon secondary;
-  private List<Tool> tools;
-  private List<Consumable> consumables;
+  private List<Item> tools;
+  private List<Item> consumables;
 
   public Loadout() {
     super();
   }
 
-  public Loadout(Weapon primary, Weapon secondary, List<Tool> tools, List<Consumable> consumables) {
+  public Loadout(Weapon primary, Weapon secondary, List<Item> tools, List<Item> consumables) {
     this.primary = primary;
     this.secondary = secondary;
     this.tools = tools;
@@ -35,19 +35,19 @@ public class Loadout {
     this.secondary = secondary;
   }
 
-  public List<Tool> getTools() {
+  public List<Item> getTools() {
     return tools;
   }
 
-  public void setTools(List<Tool> tools) {
+  public void setTools(List<Item> tools) {
     this.tools = tools;
   }
 
-  public List<Consumable> getConsumables() {
+  public List<Item> getConsumables() {
     return consumables;
   }
 
-  public void setConsumables(List<Consumable> consumables) {
+  public void setConsumables(List<Item> consumables) {
     this.consumables = consumables;
   }
 }

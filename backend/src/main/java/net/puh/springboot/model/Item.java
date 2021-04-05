@@ -1,11 +1,11 @@
 package net.puh.springboot.model;
 
-public class Tool {
+public class Item {
   private String name;
   private int price;
   private int unlockLevel;
 
-  public Tool() {
+  public Item() {
     super();
   }
 
