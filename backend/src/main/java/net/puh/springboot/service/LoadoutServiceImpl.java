@@ -16,7 +16,6 @@ public class LoadoutServiceImpl implements LoadoutService {
   @Override
   public Loadout getRandomLoadout() {
     Weapon primary = weaponDao.getRandomWeapon();
-    System.out.println("PRIMARY > " + primary.getSize());
     Weapon secondary;
     switch (primary.getSize()) {
       case 1:

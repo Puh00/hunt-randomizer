@@ -60,8 +60,8 @@ CREATE VIEW FourRandomTools AS (
     LIMIT 4
 );
 
-CREATE VIEW FourRandomConsumables AS (
+CREATE VIEW RandomConsumable AS (
     SELECT * FROM Consumables
     ORDER BY RANDOM()
-    LIMIT 4
+    LIMIT 1
 );
