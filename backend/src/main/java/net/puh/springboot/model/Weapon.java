@@ -4,7 +4,7 @@ public class Weapon {
   private String name;
   private int size;
   private int price;
-  private int unlock_level;
+  private int unlockLevel;
 
   public Weapon() {
     super();
@@ -34,11 +34,11 @@ public class Weapon {
     this.price = price;
   }
 
-  public int getUnlock_level() {
-    return unlock_level;
+  public int getUnlockLevel() {
+    return unlockLevel;
   }
 
-  public void setUnlock_level(int unlock_level) {
-    this.unlock_level = unlock_level;
+  public void setUnlockLevel(int unlockLevel) {
+    this.unlockLevel = unlockLevel;
   }
 }

@@ -1,2 +1,7 @@
-package net.puh.springboot.dao;public class WeaponDao {
+package net.puh.springboot.dao;
+
+import net.puh.springboot.model.Weapon;
+
+public interface WeaponDao {
+  Weapon getRandomWeapon();
 }
