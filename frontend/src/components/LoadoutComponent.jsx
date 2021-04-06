@@ -23,23 +23,7 @@ class LoadoutComponent extends Component {
   }
 
   componentDidMount() {
-    // Mock data
-    this.setState({
-      primary: { name: "Nitro Express", size: 3 },
-      secondary: { name: "Dolch 96", size: 1 },
-      tools: [
-        { name: "knife" },
-        { name: "medkit" },
-        { name: "flare" },
-        { name: "decoy" },
-      ],
-      consumables: [
-        { name: "vitality shot" },
-        { name: "vitality shot" },
-        { name: "frag bomb" },
-        { name: "concertina bomb" },
-      ],
-    });
+    this.randomLoadout();
   }
 
   onQuarterSwitchChange(checked) {
@@ -58,7 +42,6 @@ class LoadoutComponent extends Component {
   }
 
   randomLoadout() {
-    // TODO: axios GET request
     LoadoutService.getRandomLoadout(
       this.state.quarterMaster,
       this.state.fullLoadout,
