@@ -80,6 +80,7 @@ class LoadoutComponent extends Component {
         <div className="container" style={{ marginTop: "20px" }}>
           <div className="card col-md-6 offset-md-3 offset-md-3">
             <h2 className="text-center">Random Loadout Generator</h2>
+            <h4 className="text-center">Hunt Showdown</h4>
             <div className="card-body">
               <div className="border" style={{ marginTop: "5px" }}>
                 <label>Weapons:</label>
