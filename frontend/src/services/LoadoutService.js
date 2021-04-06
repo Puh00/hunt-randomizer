@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const LOADOUT_API_BASE_URL = "http://localhost:8080/v1/random/";
+const LOADOUT_API_BASE_URL = "http://hunt-randomizer-api.herokuapp.com/v1/random/";
 
 class LoadoutService {
   getRandomLoadout(quarterMaster, fullLoadout, level) {
