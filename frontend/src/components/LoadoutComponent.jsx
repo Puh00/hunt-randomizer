@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Switch from "react-switch";
 import NumericInput from "react-numeric-input";
+import LoadoutService from "../services/LoadoutService";
 
 class LoadoutComponent extends Component {
   constructor(props) {
@@ -24,8 +25,8 @@ class LoadoutComponent extends Component {
   componentDidMount() {
     // Mock data
     this.setState({
-      primary: { name: "Nitro Express" },
-      secondary: { name: "Dolch 96" },
+      primary: { name: "Nitro Express", size: 3 },
+      secondary: { name: "Dolch 96", size: 1 },
       tools: [
         { name: "knife" },
         { name: "medkit" },
@@ -57,8 +58,20 @@ class LoadoutComponent extends Component {
   }
 
   randomLoadout() {
-      // TODO: axios GET request
-      console.log("RANDOM LOADOUT >");
+    // TODO: axios GET request
+    LoadoutService.getRandomLoadout(
+      this.state.quarterMaster,
+      this.state.fullLoadout,
+      this.state.level
+    ).then((res) => {
+      console.log("RANDOM LOADOUT > " + JSON.stringify(res.data));
+      this.setState({
+        primary: res.data.primary,
+        secondary: res.data.secondary,
+        tools: res.data.tools,
+        consumables: res.data.consumables,
+      });
+    });
   }
 
   render() {
@@ -71,10 +84,20 @@ class LoadoutComponent extends Component {
               <div className="border" style={{ marginTop: "5px" }}>
                 <label>Weapons:</label>
                 <div className="col">
-                  <label>{this.state.primary.name}</label>
+                  <label>
+                    {this.state.primary.name +
+                      " (" +
+                      this.state.primary.size +
+                      ")"}
+                  </label>
                 </div>
                 <div className="col">
-                  <label>{this.state.secondary.name}</label>
+                  <label>
+                    {this.state.secondary.name +
+                      " (" +
+                      this.state.secondary.size +
+                      ")"}
+                  </label>
                 </div>
               </div>
 
